@@ -56,17 +56,7 @@ namespace geometry
                         Console.WriteLine("да");
                     else
                         Console.WriteLine("нет");
-                    Console.Write("Равносторонний: ");
-                    if (triangle.Equilateral() == true)
-                        Console.WriteLine("да");
-                    else
-                        Console.WriteLine("нет");
-                    Console.Write("Равнобедренный: ");
-                    if (triangle.Isosceles() == true)
-                        Console.WriteLine("да");
-                    else
-                        Console.WriteLine("нет");
-                    Console.WriteLine($"Периметр: {triangle.Perimeter()}\nПлощадь: {triangle.Area()}\n\nНажмите любую кнопку, чтобы вернутсья");
+                    Console.WriteLine($"Вид треугольника: {triangle.EquilateralIsosceles()}\n\nПериметр: {triangle.Perimeter()}\nПлощадь: {triangle.Area()}\n\nНажмите любую кнопку, чтобы вернутсья");
                     Console.ReadKey();
                     Console.Clear();
                     Main(args);

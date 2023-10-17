@@ -13,8 +13,7 @@ namespace geometry
         private int c;
         private int p;
         private bool right;
-        private bool isosceles;
-        private bool equilateral;
+        private string type;
         private double s;
         public void Info()
         {
@@ -39,33 +38,22 @@ namespace geometry
                 right = false;
             return right;
         }
-        public bool Equilateral()
+        public string EquilateralIsosceles()
         {
             if (a == b && b == c && c == a)
             {
-                equilateral = true;
-                isosceles = false;
-                return equilateral;
+                type = "равносторонний";
+                return type;
+            }
+            else if (a == b || b == c || c == a)
+            {
+                type = "равнобедренный";
+                return type;
             }
             else
             {
-                Isosceles();
-                return equilateral;
-            }
-        }
-        public bool Isosceles()
-        {
-            if ((a == b || b == c || c == a) && equilateral == false)
-            {
-                isosceles = true;
-                equilateral = false;
-                return isosceles;
-            }
-            else
-            {
-                isosceles = false;
-                equilateral = false;
-                return isosceles;
+                type = "обычный";
+                return type;
             }
         }
         public int Perimeter()
