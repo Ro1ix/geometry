@@ -48,7 +48,25 @@ namespace geometry
                     break;
                 case "4":
                     Console.Clear();
-                    Console.WriteLine("Эта функция ещё не готова. Пожалуйста, подождите, пока я не закончу код");
+                    Console.WriteLine("ТРЕУГОЛЬНИК\n");
+                    Triangle triangle = new Triangle();
+                    triangle.Info();
+                    Console.Write("\nПрямоугольный: ");
+                    if (triangle.Right() == true)
+                        Console.WriteLine("да");
+                    else
+                        Console.WriteLine("нет");
+                    Console.Write("Равносторонний: ");
+                    if (triangle.Equilateral() == true)
+                        Console.WriteLine("да");
+                    else
+                        Console.WriteLine("нет");
+                    Console.Write("Равнобедренный: ");
+                    if (triangle.Isosceles() == true)
+                        Console.WriteLine("да");
+                    else
+                        Console.WriteLine("нет");
+                    Console.WriteLine($"Периметр: {triangle.Perimeter()}\nПлощадь: {triangle.Area()}\n\nНажмите любую кнопку, чтобы вернутсья");
                     Console.ReadKey();
                     Console.Clear();
                     Main(args);
