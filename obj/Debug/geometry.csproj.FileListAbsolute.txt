@@ -1,0 +1,7 @@
+C:\Users\prdb\Desktop\geometry\bin\Debug\geometry.exe.config
+C:\Users\prdb\Desktop\geometry\bin\Debug\geometry.exe
+C:\Users\prdb\Desktop\geometry\bin\Debug\geometry.pdb
+C:\Users\prdb\Desktop\geometry\obj\Debug\geometry.csproj.AssemblyReference.cache
+C:\Users\prdb\Desktop\geometry\obj\Debug\geometry.csproj.CoreCompileInputs.cache
+C:\Users\prdb\Desktop\geometry\obj\Debug\geometry.exe
+C:\Users\prdb\Desktop\geometry\obj\Debug\geometry.pdb
