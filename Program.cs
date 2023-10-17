@@ -28,21 +28,27 @@ namespace geometry
                     break;
                 case "2":
                     Console.Clear();
-                    Console.WriteLine("Эта функция ещё не готова. Пожалуйста, потерпите, пока я не закончу код");
+                    Console.WriteLine("ПРЯМОУГОЛЬНИК\n");
+                    Rectangle rectangle = new Rectangle();
+                    rectangle.Info();
+                    Console.WriteLine($"\nПериметр: {rectangle.Perimeter()}\nПлощадь: {rectangle.Area()}\n\nНажмите любую кнопку, чтобы вернутсья");
                     Console.ReadKey();
                     Console.Clear();
                     Main(args);
                     break;
                 case "3":
                     Console.Clear();
-                    Console.WriteLine("Эта функция ещё не готова. Пожалуйста, потерпите, пока я не закончу код");
+                    Console.WriteLine("КРУГ\n");
+                    Circle circle = new Circle();
+                    circle.Info();
+                    Console.WriteLine($"\nПериметр: {circle.Perimeter()}\nПлощадь: {circle.Area()}\n\nНажмите любую кнопку, чтобы вернутсья");
                     Console.ReadKey();
                     Console.Clear();
                     Main(args);
                     break;
                 case "4":
                     Console.Clear();
-                    Console.WriteLine("Эта функция ещё не готова. Пожалуйста, потерпите, пока я не закончу код");
+                    Console.WriteLine("Эта функция ещё не готова. Пожалуйста, подождите, пока я не закончу код");
                     Console.ReadKey();
                     Console.Clear();
                     Main(args);
