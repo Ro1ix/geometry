@@ -78,6 +78,10 @@ namespace geometry
                             Console.WriteLine("ЧЕТЫРЁХУГОЛЬНАЯ ПИРАМИДА\n");
                         pyramid.InfoPyramid();
                     }
+                    Console.WriteLine($"\nПериметр: {pyramid.Perimeter(pyramidInput)}\nПлощадь: {pyramid.Area(pyramidInput)}\n\nНажмите любую кнопку, чтобы вернутсья");
+                    Console.ReadKey();
+                    Console.Clear();
+                    Main(args);
                     break;
                 case "6":
                     break;
