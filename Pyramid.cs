@@ -46,7 +46,7 @@ namespace geometry
             sideLine = Math.Round(Math.Sqrt(Math.Pow(height, 2) + Math.Pow(downLine, 2)), 2);
             Console.WriteLine($"Боковое ребро = {sideLine}");
         }
-        public double Perimeter(string pyramidInput)
+        private double Perimeter(string pyramidInput)
         {
             if (pyramidInput == "3")
             {
@@ -58,7 +58,7 @@ namespace geometry
             }
             return p;
         }
-        public double Area(string pyramidInput)
+        private double Area(string pyramidInput)
         {
             if (pyramidInput == "3")
             {
@@ -82,10 +82,14 @@ namespace geometry
             }    
             return s;
         }
-        public double Volume()
+        private double Volume()
         {
             v = Math.Round(sDown * height / 3, 2);
             return v;
+        }
+        public void Output(string pyramidInput)
+        {
+            Console.WriteLine($"\nПериметр: {Perimeter(pyramidInput)}\nПлощадь: {Area(pyramidInput)}\nОбъём: {Volume()}\n\nНажмите любую кнопку, чтобы вернутсья");
         }
     }
 }

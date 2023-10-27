@@ -56,15 +56,19 @@ namespace geometry
                 return type;
             }
         }
-        public int Perimeter()
+        private int Perimeter()
         {
             p = a + b + c;
             return p;
         }
-        public double Area()
+        private double Area()
         {
             s = (Math.Sqrt((double)(Perimeter() / 2) * ((double)(Perimeter() / 2) - a) * ((double)(Perimeter() / 2) - b) * ((double)(Perimeter() / 2) - c)));
             return s;
+        }
+        public void Output()
+        {
+            Console.WriteLine($"Вид треугольника: {EquilateralIsosceles()}\n\nПериметр: {Perimeter()}\nПлощадь: {Area()}\n\nНажмите любую кнопку, чтобы вернутсья");
         }
     }
 }

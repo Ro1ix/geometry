@@ -16,15 +16,19 @@ namespace geometry
             Console.Write("Введите радиус круга\nr = ");
             r = Convert.ToInt32(Console.ReadLine());
         }
-        public double Perimeter()
+        private double Perimeter()
         {
             p = 2 * Math.Round(Math.PI, 2) * r;
             return p;
         }
-        public double Area()
+        private double Area()
         {
             s = Math.Round(Math.PI, 2) * Math.Pow(r, 2);
             return s;
+        }
+        public void Output()
+        {
+            Console.WriteLine($"\nПериметр: {Perimeter()}\nПлощадь: {Area()}\n\nНажмите любую кнопку, чтобы вернутсья");
         }
     }
 }

@@ -19,15 +19,19 @@ namespace geometry
             Console.Write("b = ");
             b = Convert.ToInt32(Console.ReadLine());
         }
-        public int Perimeter()
+        private int Perimeter()
         {
             p = (a + b) * 2;
             return p;
         }
-        public double Area()
+        private double Area()
         {
             s = a * b;
             return s;
+        }
+        public void Output()
+        {
+            Console.WriteLine($"\nПериметр: {Perimeter()}\nПлощадь: {Area()}\n\nНажмите любую кнопку, чтобы вернутсья");
         }
     }
 }

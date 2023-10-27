@@ -21,7 +21,7 @@ namespace geometry
                     Square square = new Square();
                     Console.WriteLine("КВАДРАТ\n");
                     square.Info();
-                    Console.WriteLine($"\nПериметр: {square.Perimeter()}\nПлощадь: {square.Area()}\n\nНажмите любую кнопку, чтобы вернутсья");
+                    square.Output();
                     Console.ReadKey();
                     Console.Clear();
                     Main(args);
@@ -31,7 +31,7 @@ namespace geometry
                     Rectangle rectangle = new Rectangle();
                     Console.WriteLine("ПРЯМОУГОЛЬНИК\n");
                     rectangle.Info();
-                    Console.WriteLine($"\nПериметр: {rectangle.Perimeter()}\nПлощадь: {rectangle.Area()}\n\nНажмите любую кнопку, чтобы вернутсья");
+                    rectangle.Output();
                     Console.ReadKey();
                     Console.Clear();
                     Main(args);
@@ -41,7 +41,7 @@ namespace geometry
                     Circle circle = new Circle();
                     Console.WriteLine("КРУГ\n");
                     circle.Info();
-                    Console.WriteLine($"\nПериметр: {circle.Perimeter()}\nПлощадь: {circle.Area()}\n\nНажмите любую кнопку, чтобы вернутсья");
+                    circle.Output();
                     Console.ReadKey();
                     Console.Clear();
                     Main(args);
@@ -56,7 +56,7 @@ namespace geometry
                         Console.WriteLine("да");
                     else
                         Console.WriteLine("нет");
-                    Console.WriteLine($"Вид треугольника: {triangle.EquilateralIsosceles()}\n\nПериметр: {triangle.Perimeter()}\nПлощадь: {triangle.Area()}\n\nНажмите любую кнопку, чтобы вернутсья");
+                    triangle.Output();
                     Console.ReadKey();
                     Console.Clear();
                     Main(args);
@@ -78,7 +78,7 @@ namespace geometry
                             Console.WriteLine("ЧЕТЫРЁХУГОЛЬНАЯ ПИРАМИДА\n");
                         pyramid.InfoPyramid();
                     }
-                    Console.WriteLine($"\nПериметр: {pyramid.Perimeter(pyramidInput)}\nПлощадь: {pyramid.Area(pyramidInput)}\nОбъём: {pyramid.Volume()}\n\nНажмите любую кнопку, чтобы вернутсья");
+                    pyramid.Output(pyramidInput);
                     Console.ReadKey();
                     Console.Clear();
                     Main(args);
