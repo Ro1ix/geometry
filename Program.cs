@@ -68,6 +68,7 @@ namespace geometry
                     Console.Clear();
                     if (pyramidInput == "3")
                     {
+                        Console.WriteLine("КОНУС\n");
                         pyramid.InfoCone();
                     }
                     else
