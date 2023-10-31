@@ -18,9 +18,10 @@ namespace geometry
             {
                 case "1":
                     Console.Clear();
-                    Square square = new Square();
                     Console.WriteLine("КВАДРАТ\n");
-                    square.Info();
+                    Console.Write("Введите длину стороны квадрата\na = ");
+                    int a = Convert.ToInt32(Console.ReadLine());
+                    Square square = new Square(a);
                     square.Output();
                     Console.ReadKey();
                     Console.Clear();
@@ -28,9 +29,12 @@ namespace geometry
                     break;
                 case "2":
                     Console.Clear();
-                    Rectangle rectangle = new Rectangle();
                     Console.WriteLine("ПРЯМОУГОЛЬНИК\n");
-                    rectangle.Info();
+                    Console.Write("Введите длины сторон прямоугольника\na = ");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("b = ");
+                    int b = Convert.ToInt32(Console.ReadLine());
+                    Rectangle rectangle = new Rectangle(a, b);
                     rectangle.Output();
                     Console.ReadKey();
                     Console.Clear();
@@ -38,9 +42,10 @@ namespace geometry
                     break;
                 case "3":
                     Console.Clear();
-                    Circle circle = new Circle();
                     Console.WriteLine("КРУГ\n");
-                    circle.Info();
+                    Console.Write("Введите радиус круга\nr = ");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    Circle circle = new Circle(a);
                     circle.Output();
                     Console.ReadKey();
                     Console.Clear();
@@ -48,9 +53,20 @@ namespace geometry
                     break;
                 case "4":
                     Console.Clear();
-                    Triangle triangle = new Triangle();
                     Console.WriteLine("ТРЕУГОЛЬНИК\n");
-                    triangle.Info();
+                    Console.Write("Введите длины сторон треугольника\na = ");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("b = ");
+                    b = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("c = ");
+                    int c = Convert.ToInt32(Console.ReadLine());
+                    if (a + b <= c || b + c <= a || c + a <= b)
+                    {
+                        Console.WriteLine("\nОШИБКА!!! Треугольник с такими сторонами не существует\nНажмите любую клавишу и попробуйте ещё раз\n");
+                        Console.ReadKey();
+                        goto case "4";
+                    }
+                    Triangle triangle = new Triangle(a ,b, c);
                     Console.Write("\nПрямоугольный: ");
                     if (triangle.Right() == true)
                         Console.WriteLine("да");
@@ -63,23 +79,44 @@ namespace geometry
                     break;
                 case "5":
                     Console.Clear();
-                    Pyramid pyramid = new Pyramid();
-                    string pyramidInput = pyramid.Choise();
-                    Console.Clear();
+                    Console.WriteLine("Выберите основание фигуры\n1. Треугольник    2. Квадрат    3. Круг");
+                    string pyramidInput = Console.ReadLine();
                     if (pyramidInput == "3")
                     {
+                        Console.Clear(); 
                         Console.WriteLine("КОНУС\n");
-                        pyramid.InfoCone();
+                        Console.Write("Введите данные конуса\nРадиус основания = ");
+                        a = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Высота = ");
+                        int height = Convert.ToInt32(Console.ReadLine());
+                        double sideLine = Math.Round(Math.Sqrt(Math.Pow(height, 2) + Math.Pow(a, 2)), 2);
+                        Console.WriteLine($"Боковое ребро = {sideLine}");
+                        Pyramid pyramid = new Pyramid(a, height, sideLine);
+                        pyramid.Output(pyramidInput);
                     }
-                    else
+                    else if (pyramidInput == "1" || pyramidInput == "2")
                     {
+                        Console.Clear(); 
                         if (pyramidInput == "1")
                             Console.WriteLine("ТРЕУГОЛЬНАЯ ПИРАМИДА\n");
                         if (pyramidInput == "2")
                             Console.WriteLine("ЧЕТЫРЁХУГОЛЬНАЯ ПИРАМИДА\n");
-                        pyramid.InfoPyramid();
+                        Console.Write("Введите данные пирамиды\nСторона основания = ");
+                        a = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("Высота = ");
+                        int height = Convert.ToInt32(Console.ReadLine());
+                        double sideLine = Math.Round(Math.Sqrt(Math.Pow(height, 2) + (a / (2 * Math.Pow(Math.Sin(Math.PI / 3), 2)))), 2);
+                        Console.WriteLine($"Боковое ребро = {sideLine}");
+                        Pyramid pyramid = new Pyramid(a, height, sideLine);
+                        pyramid.Output(pyramidInput);
                     }
-                    pyramid.Output(pyramidInput);
+                    else
+                    {
+                        Console.WriteLine("ОШИБКА!!! Нажмите любую клавишу и попробуйте ещё раз");
+                        Console.ReadKey();
+                        Console.Clear();
+                        goto case "5";
+                    }
                     Console.ReadKey();
                     Console.Clear();
                     Main(args);
