@@ -44,10 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Circle.cs" />
-    <Compile Include="GeometricShape.cs" />
+    <Compile Include="Cone.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pyramid.cs" />
+    <Compile Include="PyramidSquare.cs" />
     <Compile Include="PyramidTriangle.cs" />
     <Compile Include="Rectangle.cs" />
     <Compile Include="Square.cs" />

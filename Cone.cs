@@ -6,28 +6,27 @@ using System.Threading.Tasks;
 
 namespace geometry
 {
-    internal class PyramidTriangle : Triangle
+    internal class Cone : Circle
     {
         private int height;
         private double sideLine;
         private double p;
         private new double s;
         private double v;
-        public PyramidTriangle(int a, int b, int  c, int height, double sideLine) : base(a, b, c)
+        public Cone(int a, int height, double sideLine) : base(a)
         {
             this.height = height;
             this.sideLine = sideLine;
         }
-
         protected override double Perimeter()
         {
-            p = base.Perimeter() + sideLine * 3;
+            p = base.Perimeter();
             return p;
         }
-        protected override double Area() 
+        protected override double Area()
         {
-            double apopheme = Math.Round(Math.Sqrt(Math.Pow(height, 2) + (a / (2 * Math.Tan(Math.PI / 3)))), 2);
-            s = Math.Round(apopheme * 3 + base.Area(), 2);
+            double apopheme = Math.Sqrt(Math.Pow(a, 2) + Math.Pow(height, 2));
+            s = Math.Round(Math.Round(Math.PI, 2) * a * apopheme + base.Area(), 2);
             return s;
         }
         private double Volume()

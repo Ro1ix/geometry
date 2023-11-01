@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace geometry
 {
-    internal class Triangle : GeometricShape
+    internal class Triangle
     {
-        private int b;
-        private int c;
+        protected int a;
+        protected int b;
+        protected int c;
         private bool right;
         private string type;
+        private double p;
+        protected double s;
         public Triangle(int a, int b, int c)
         {
             this.a = a;
@@ -44,12 +47,12 @@ namespace geometry
                 return type;
             }
         }
-        private int Perimeter()
+        protected virtual double Perimeter()
         {
             p = a + b + c;
-            return (int)p;
+            return p;
         }
-        private double Area()
+        protected virtual double Area()
         {
             s = (Math.Sqrt((double)(Perimeter() / 2) * ((double)(Perimeter() / 2) - a) * ((double)(Perimeter() / 2) - b) * ((double)(Perimeter() / 2) - c)));
             return s;

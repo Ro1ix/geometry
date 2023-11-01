@@ -83,7 +83,7 @@ namespace geometry
                     string pyramidInput = Console.ReadLine();
                     if (pyramidInput == "3")
                     {
-                        Console.Clear(); 
+                        Console.Clear();
                         Console.WriteLine("КОНУС\n");
                         Console.Write("Введите данные конуса\nРадиус основания = ");
                         a = Convert.ToInt32(Console.ReadLine());
@@ -91,24 +91,38 @@ namespace geometry
                         int height = Convert.ToInt32(Console.ReadLine());
                         double sideLine = Math.Round(Math.Sqrt(Math.Pow(height, 2) + Math.Pow(a, 2)), 2);
                         Console.WriteLine($"Боковое ребро = {sideLine}");
-                        Pyramid pyramid = new Pyramid(a, height, sideLine);
-                        pyramid.Output(pyramidInput);
+                        Cone cone = new Cone(a, height, sideLine);
+                        cone.Output();
                     }
                     else if (pyramidInput == "1" || pyramidInput == "2")
                     {
-                        Console.Clear(); 
+                        Console.Clear();
                         if (pyramidInput == "1")
+                        {
                             Console.WriteLine("ТРЕУГОЛЬНАЯ ПИРАМИДА\n");
+                            Console.Write("Введите данные пирамиды\nСторона основания = ");
+                            a = Convert.ToInt32(Console.ReadLine());
+                            b = a;
+                            c = a;
+                            Console.Write("Высота = ");
+                            int height = Convert.ToInt32(Console.ReadLine());
+                            double sideLine = Math.Round(Math.Sqrt(Math.Pow(height, 2) + (a / (2 * Math.Pow(Math.Sin(Math.PI / 3), 2)))), 2);
+                            Console.WriteLine($"Боковое ребро = {sideLine}");
+                            PyramidTriangle pyramid = new PyramidTriangle(a, b, c, height, sideLine);
+                            pyramid.Output();
+                        }
                         if (pyramidInput == "2")
+                        {
                             Console.WriteLine("ЧЕТЫРЁХУГОЛЬНАЯ ПИРАМИДА\n");
-                        Console.Write("Введите данные пирамиды\nСторона основания = ");
-                        a = Convert.ToInt32(Console.ReadLine());
-                        Console.Write("Высота = ");
-                        int height = Convert.ToInt32(Console.ReadLine());
-                        double sideLine = Math.Round(Math.Sqrt(Math.Pow(height, 2) + (a / (2 * Math.Pow(Math.Sin(Math.PI / 3), 2)))), 2);
-                        Console.WriteLine($"Боковое ребро = {sideLine}");
-                        Pyramid pyramid = new Pyramid(a, height, sideLine);
-                        pyramid.Output(pyramidInput);
+                            Console.Write("Введите данные пирамиды\nСторона основания = ");
+                            a = Convert.ToInt32(Console.ReadLine());
+                            Console.Write("Высота = ");
+                            int height = Convert.ToInt32(Console.ReadLine());
+                            double sideLine = Math.Round(Math.Sqrt(Math.Pow(height, 2) + (a / (2 * Math.Pow(Math.Sin(Math.PI / 3), 2)))), 2);
+                            Console.WriteLine($"Боковое ребро = {sideLine}");
+                            PyramidSquare pyramid = new PyramidSquare(a, height, sideLine);
+                            pyramid.Output();
+                        }
                     }
                     else
                     {

@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace geometry
 {
-    internal class Rectangle : GeometricShape
+    internal class Rectangle
     {
-        private int b;
+        protected int a;
+        protected int b;
+        private double p;
+        protected double s;
         public Rectangle(int a, int b)
         {
             this.a = a;
@@ -19,7 +22,7 @@ namespace geometry
             p = (a + b) * 2;
             return (int)p;
         }
-        private double Area()
+        protected double Area()
         {
             s = a * b;
             return s;
